@@ -39,7 +39,7 @@ function addrepo() {
   echo "You chose to add the repository. To cancel click ctrl+c in the next 5 seconds."
   sleep 5
   printf "Downloading package list..."
-  sudo wget -q https://raw.fastgit.org/chunky-milk/raspbian-addons/master/rpirepo.list -O /etc/apt/sources.list.d/rpirepo.list || error "Failed to download rpirepo.list!"
+  sudo wget -q https://raw.fastgit.org/hmsjy2017/raspbian-addons/master/rpirepo.list -O /etc/apt/sources.list.d/rpirepo.list || error "Failed to download rpirepo.list!"
   #sudo wget -q http://download.tuxfamily.org/rpiaddons/rpi_addons.list -O /etc/apt/sources.list.d/rpi_addons.list || error "Failed to download rpi_addons.list!"
   echo "done"
   printf "Adding GPG key..."
