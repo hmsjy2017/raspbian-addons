@@ -1,8 +1,7 @@
 name: CI
 
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
+
   push:
     branches: master
   schedule:
@@ -16,10 +15,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Setup SSH Private Key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa 
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          
       - name: Clone repo  
-        run: |
-          git clone https://github.com/chunky-milk/raspbian-addons
-
+        run: git clone https://github.com/chunky-milk/raspbian-addons
+          
       - name: Upload to OSDN
-        run: |
-          rsync -a /home/runner/work/raspbian-addons/raspbian-addons hmsjy2017@storage.osdn.net:/storage/groups/r/ra/raspbian-addons/
+        run: rsync -a /home/runner/work/raspbian-addons/raspbian-addons hmsjy2017@storage.osdn.net:/storage/groups/r/ra/raspbian-addons/
