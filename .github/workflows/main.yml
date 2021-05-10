@@ -1,0 +1,29 @@
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: master
+  pull_request:
+    branches: master
+  schedule:
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo  
+        run: |
+          git clone https://github.com/chunky-milk/raspbian-addons
+          ls
+          pwd
+
+     # - name: Upload to OSDN
+     #   run: |
+     #     rsync -a /home/runner/work/raspbian-addons/ hmsjy2017@storage.osdn.net:/storage/groups/r/ra/raspbian-addons/
