@@ -22,7 +22,7 @@ jobs:
           mkdir -p ~/.ssh/
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa 
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          ssh-keyscan storage.osdn.net >> ~/.ssh/known_hosts
           
       - name: Clone repo  
         run: git clone https://github.com/chunky-milk/raspbian-addons
