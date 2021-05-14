@@ -28,4 +28,4 @@ jobs:
         run: git clone https://github.com/chunky-milk/raspbian-addons
           
       - name: Upload to OSDN
-        run: rsync -avzP --delete --delete-delay --delay-updates /home/runner/work/raspbian-addons/raspbian-addons/ hmsjy2017@storage.osdn.net:/storage/groups/r/ra/raspbian-addons
+        run: rsync -avrt /home/runner/work/raspbian-addons/raspbian-addons/ hmsjy2017@storage.osdn.net:/storage/groups/r/ra/raspbian-addons
