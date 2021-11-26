@@ -70,5 +70,5 @@ Old repository archive: An older backup of the repository is [here](https://arch
 
 Thanks to [Fosshost](https://fosshost.org/) for providing VPS services for the repository, and to OSDN and SourceForge for the [mirrors](https://github.com/raspbian-addons/mirrors)! Raspbian Addons would not be possible without these services.
     
-<img src="https://cdn.jsdelivr.net/gh/hmsjy2017/raapbian-addons@main/fosshostorg.png" width="200px" height="100px" />
+<img src="./icons/fosshostorg.png" width="200px" height="100px" />
 
